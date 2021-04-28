@@ -4,11 +4,15 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Marcellus&display=swap');
 
-html,
-body {
-    height: 100%;
-    display: flex;
-    width: 80vw;
+html
+{ background-image: url('./Deauville-Inn-scaled.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  
+  display: flex;
+  justify-content: center;
+  background-attachment: fixed;
+   
 }
 
 * {
@@ -17,10 +21,16 @@ body {
 }
 
 body {
-    background-color: #b983b7;
-    display: grid;
-    place-items: center
     
+  background: rgba(29, 114, 29, 0.3);
+    display: grid;
+    place-items: center;
+    
+    height: 100vh;
+}
+
+#root {
+  background: transparent;
 }
 
 .card {

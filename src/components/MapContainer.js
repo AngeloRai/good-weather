@@ -33,7 +33,7 @@ export class MapContainer extends React.Component {
 
   render() {
     return (
-      <div className="container " style={{ maxWidth: "300px" }}>
+      <div className="container " style={{ maxWidth: "300px", opacity: "" }}>
         <Map
           style={style}
           containerStyle={containerStyle}
