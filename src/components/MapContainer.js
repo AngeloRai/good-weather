@@ -2,16 +2,7 @@ import React from "react";
 
 import { Map, GoogleApiWrapper, InfoWindow, Marker } from "google-maps-react";
 
-const style = {
-  maxWidth: "450px",
-  height: "350px",
-  overflowX: "hidden",
-  overflowY: "hidden",
-};
-const containerStyle = {
-  maxWidth: "450px",
-  height: "350px",
-};
+
 
 export class MapContainer extends React.Component {
   state = {
@@ -19,8 +10,7 @@ export class MapContainer extends React.Component {
     activeMarker: {},
     selectedPlace: {},
     mapCenter: {
-      lat: -23.54,
-      lng: -46.63,
+      lat: -23.54, lng: -46.63,
     },
   };
 
@@ -33,13 +23,13 @@ export class MapContainer extends React.Component {
 
   render() {
     return (
-      <div className="container " style={{ maxWidth: "300px", opacity: "" }}>
+      <div className="container " style={{ maxWidth: "300px", opacity: "0.8" }}>
         <Map
           style={style}
           containerStyle={containerStyle}
           google={this.props.google}
           zoom={11}
-          initialCenter={this.state.mapCenter}
+          initialCenter={this.props.mapCenter}
         >
           <Marker onClick={this.onMarkerClick} name={"Current location"} />
 
@@ -60,3 +50,15 @@ export class MapContainer extends React.Component {
 export default GoogleApiWrapper({
   apiKey: "AIzaSyC4LfW4MmJgThlKn3thdzCqzh3VnphitIs",
 })(MapContainer);
+
+
+const style = {
+  maxWidth: "450px",
+  height: "350px",
+  overflowX: "hidden",
+  overflowY: "hidden",
+};
+const containerStyle = {
+  maxWidth: "450px",
+  height: "350px",
+};

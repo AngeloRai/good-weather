@@ -4,9 +4,9 @@ export class Input extends Component {
     render() {
         return (
             <div>
-                 <form   onSubmit={this.props.getCities}>
+                 <form   >
           <input
-          
+            style={{opacity: '.6'}}
             className="m-3"
             type="text"
             name="country"
@@ -15,6 +15,7 @@ export class Input extends Component {
             onChange={this.props.handleChange}
           />
           <input
+          style={{opacity: '.6'}}
             type="text"
             name="city"
             value={this.props.city}

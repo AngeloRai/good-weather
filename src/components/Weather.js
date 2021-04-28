@@ -1,44 +1,67 @@
 import React, { Component } from "react";
 import axios from "axios";
 
-// key 1 AIzaSyC4LfW4MmJgThlKn3thdzCqzh3VnphitIs
-// key 2 AIzaSyBCyuVoz1hvTxlfTFHincrJ_h1hRSooks4
-import MapContainer from './MapContainer'
+import MapContainer from "./MapContainer";
 import DisplayWeather from "./DisplayWeather";
 import Input from "./Input";
+//import GooglePlaces from './GooglePlaces'
 const API_KEY = "c7a2cdf846e14c476ef7581681ffb56e";
 
 export class Weather extends Component {
   state = {
     country: "brazil",
     city: "",
-    lat: "",
-    lon: "",
+    coord: { lat: "", lng: "" },
     cities: "",
-    locations: ''
+    locations: "",
+    layers: "",
   };
 
-  componentDidMount = async () => {
-    const response = await axios.get(
-      `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=-22.9055600,-47.0608300&radius=5500&type=restaurant&keyword=cruise&key=AIzaSyBCyuVoz1hvTxlfTFHincrJ_h1hRSooks4`
-    );
-    console.log(response.data);
-    this.setState({locations: response.data});
-  }
+  // getLocation = () => {
+  //   if (navigator.geolocation) {
+  //     navigator.geolocation.getCurrentPosition(this.showPosition);
+  //   } else {
+  //     return "Geolocation is not supported by this browser.";
+  //   }
+  // };
 
+  // showPosition = (position) => {
+  //   let lat = position.coords.latitude;
+  //   let lon = position.coords.longitude;
+  //   this.setState({ coord: { lat: lat, lng: lon } });
+  // };
 
+  // componentDidMount = async () => {
+  //   try {
+  //     const response = await axios.get(
+  //       `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=-22.5050000,-43.1786100&radius=5500&type=restaurant&keyword=cruise&key=AIzaSyBCyuVoz1hvTxlfTFHincrJ_h1hRSooks4`
+  //     );
+  //     console.log(response.data);
+  //     this.setState({ locations: response.data });
+
+  //     const response3 = await axios.get(
+  //       `http://maps.openweathermap.org/maps/2.0/weather/TA2/10/${this.state.coord.lat}/${this.state.coord.lng}?date=&opacity=0.9&fill_bound=true&appid=${API_KEY}`
+  //     );
+  //     this.setState({ layers: [...response3.data] });
+  //   } catch (err) {
+  //     console.log(err);
+  //   }
+  // };
+ 
   componentDidUpdate = async (prevProps, prevStates) => {
     if (prevStates.city !== this.state.city) {
       const response = await axios.get(
         `https://api.openweathermap.org/data/2.5/weather?q=${this.state.city},${this.state.country}&units=metric&appid=${API_KEY}`
       );
       this.setState({
-        lon: response.data.coord.lon,
-        lat: response.data.coord.lat,
+        coord: {
+          lat: response.data.coord.lat,
+          lng: response.data.coord.lon,
+        },
       });
 
       const response2 = await axios.get(
-        `https://api.openweathermap.org/data/2.5/find?lat=${this.state.lat}&lon=${this.state.lon}&cnt=15&units=metric&appid=${API_KEY}`
+        `https://api.openweathermap.org/data/2.5/find?lat=${this.state.coord.lat}&lon=${this.state.coord.lng}&cnt=15&units=metric&appid=${API_KEY}`
       );
       this.setState({ cities: [...response2.data.list] });
       console.log(this.state.cities);
@@ -50,11 +73,9 @@ export class Weather extends Component {
   };
 
   render() {
-    console.log('locations' + this.state.locations);
     return (
-      <div className="mt-5">
+      <div className="mt-5" style={{ opcaity: ".3" }}>
         <Input
-          getCities={this.getCities}
           country={this.state.country}
           city={this.state.city}
           handleChange={this.handleChange}
@@ -63,7 +84,12 @@ export class Weather extends Component {
         {this.state.cities &&
           this.state.cities.map((city) => {
             return (
-              <div key={city.id} className=''>
+              <div key={city.id} className="">
+                <div className="ml-2 mt-2">
+                  <MapContainer
+                    mapCenter={{ lat: city.coord.lat, lng: city.coord.lon }}
+                  />
+                </div>
                 <DisplayWeather
                   id={city.id}
                   name={city.name}
@@ -73,7 +99,6 @@ export class Weather extends Component {
                   humidity={city.main.humidity}
                   imgUrl={`http://openweathermap.org/img/wn/${city.weather[0].icon}@4x.png`}
                 />
-                <MapContainer/>
               </div>
             );
           })}
@@ -83,3 +108,6 @@ export class Weather extends Component {
 }
 
 export default Weather;
+
+// key 1 AIzaSyC4LfW4MmJgThlKn3thdzCqzh3VnphitIs
+// key 2 AIzaSyBCyuVoz1hvTxlfTFHincrJ_h1hRSooks4

@@ -1,18 +1,19 @@
-import Weather from './components/Weather'
-import GooglePlaces from './components/GooglePlaces'
-
 import './App.css';
+import { BrowserRouter, Route } from 'react-router-dom';
+
+import Weather from './components/Weather'
+import Home from './components/Home'
+
 
 function App() {
   return (
-    <div className='d-flex' style={{background: 'transparent'}}>
-    <Weather/>
-      {/* <div className="container">
-        <GooglePlaces/>
-        
-        
-      </div> */}
-    </div>
+    
+    <BrowserRouter>
+
+    <Route exact path="/" component={Home} />
+    <Route exact path="/weather" component={Weather} />
+    
+    </BrowserRouter>
   );
 }
 
