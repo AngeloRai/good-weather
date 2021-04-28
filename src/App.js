@@ -5,7 +5,7 @@ import './App.css';
 
 function App() {
   return (
-    <div className='d-flex'>
+    <div className='d-flex' style={{background: 'transparent'}}>
     <Weather/>
       {/* <div className="container">
         <GooglePlaces/>
