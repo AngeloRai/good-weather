@@ -2,61 +2,73 @@
   text-align: center;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Marcellus&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Marcellus&display=swap");
 
-html
-{ background-image: url('./Deauville-Inn-scaled.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  
+html {
   display: flex;
   justify-content: center;
-  background-attachment: fixed;
-   
 }
 
 * {
-    padding: 0px;
-    margin: 0px
+  padding: 0px;
+  margin: 0px;
 }
 
 body {
-    
-  background: rgba(29, 114, 29, 0.3);
-    display: grid;
-    place-items: center;
-    
-    height: 100vh;
+  background-image: url("./Deauville-Inn-scaled.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  display: grid;
+  place-items: center;
+  opacity: 0.9;
+  height: 100vh;
 }
 
 #root {
   background: transparent;
 }
 
-.card {
-    background-color: #977777;
-    border-radius: 10px;
-    color: #6f707d;
-    font-family: 'Marcellus', serif;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+.home {
+  color: #efe1f1;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+  rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+  rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+border-radius: 10px;
+
 }
 
+.text {
+  font-family: "Marcellus", serif;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  border-radius: 10px;
+  background-color: #6f707d;
+  opacity: 0.7;
+  text-decoration: none;
+}
 
+.card {
+  background-color: #977777;
+  border-radius: 10px;
+  color: #6f707d;
+  font-family: "Marcellus", serif;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
 
 #heading {
-    font-size: 55px;
-    color: #2b304d
+  font-size: 55px;
+  color: #2b304d;
 }
 
 form input[name="city"],
-form input[name="country"]{
+form input[name="country"] {
   font-size: 2rem;
-    background-color: white;
+  background-color: white;
   border: 0;
   border: 1px solid white;
   border-radius: 0;
 }
-
-
-
-
