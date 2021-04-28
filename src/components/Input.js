@@ -4,9 +4,10 @@ export class Input extends Component {
     render() {
         return (
             <div>
-                 <form onSubmit={this.props.getCities}>
+                 <form   onSubmit={this.props.getCities}>
           <input
-            className="m-5"
+          
+            className="m-3"
             type="text"
             name="country"
             value={this.props.country}
@@ -20,7 +21,7 @@ export class Input extends Component {
             placeholder="city..."
             onChange={this.props.handleChange}
           />
-          <button className="m-5">Get Weather</button>
+          {/* <button className="m-5">Get Weather</button> */}
         </form>
             </div>
         )
