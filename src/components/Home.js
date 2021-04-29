@@ -12,7 +12,7 @@ function Home() {
       <Link to={`/weather`} style={{textDecoration: 'none',}}>
         <div className="home">
           <h1 className="text">
-            CHECK OUT THE WEATHER FOR SELECTED CITY <br /> AND READ SOME NEWS ABOUT REST
+            PICK A CITY, CHECK OUT THE WEATHER <br /> AND READ SOME NEWS
           </h1>
         </div>
       </Link>

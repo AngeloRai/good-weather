@@ -1,12 +1,12 @@
-import React, { Component } from 'react'
+import React, { Component } from "react";
 
 export class Input extends Component {
-    render() {
-        return (
-            <div>
-                 <form   >
+  render() {
+    return (
+      <div>
+        <form>
           <input
-            style={{opacity: '.6'}}
+            style={{ opacity: ".6" }}
             className="m-3"
             type="text"
             name="country"
@@ -15,7 +15,7 @@ export class Input extends Component {
             onChange={this.props.handleChange}
           />
           <input
-          style={{opacity: '.6'}}
+            style={{ opacity: ".6" }}
             type="text"
             name="city"
             value={this.props.city}
@@ -24,9 +24,9 @@ export class Input extends Component {
           />
           {/* <button className="m-5">Get Weather</button> */}
         </form>
-            </div>
-        )
-    }
+      </div>
+    );
+  }
 }
 
-export default Input
+export default Input;

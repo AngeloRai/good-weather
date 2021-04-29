@@ -5,37 +5,32 @@ import sunImage from "../sun-sunglasses-5a.png";
 
 export class NewsDisplay extends Component {
   state = {
-    news: "",
-    state: "",
-    city: "",
-  };
+    news: [],
+};
 
   componentDidMount = async () => {
-    try {
+    
       const response = await axios.get(
-        ` https://newsapi.org/v2/everything?q=(bar OR restaurante OR comida)+melhores+lugares+comer+${this.props.state.city}&apiKey=0b3cce36cefb47169db35892214ae9f7`
+        ` https://newsapi.org/v2/everything?q=(bar OR restaurante OR comida)+melhores+lugares+comer+${this.props.state.city}&apiKey=197d4650e19949b2890933226983e9ed`
       );
       console.log(response.data.articles);
       this.setState({ news: [...response.data.articles] });
-    } catch (err) {
-      console.log(err);
-    }
+   
   };
 
   componentDidUpdate = async (prevProps, prevStates) => {
-    if (prevStates.city !== this.state.city) {
+    if(prevStates.news === this.state.news){
       const response = await axios.get(
-        ` https://newsapi.org/v2/everything?q=(bar OR restaurante OR comida)+melhores+lugares+comer+${this.props.state.city}&apiKey=0b3cce36cefb47169db35892214ae9f7`
+        ` https://newsapi.org/v2/everything?q=(bar OR restaurante OR comida)+melhores+lugares+comer+${this.props.state.city}&apiKey=197d4650e19949b2890933226983e9ed`
       );
       this.setState({ news: [...response.data.articles] });
+      console.log(this.state.news);
+      console.log('hello');
     }
   };
 
-  handleChange = (event) => {
-    this.setState({ [event.target.name]: event.target.value });
-  };
-
   render() {
+      
     return (
       <div className='mt-5' style={{margin: '50px'}}>
         <Link to={`/weather`} style={{ textDecoration: "none" }}>
@@ -47,8 +42,7 @@ export class NewsDisplay extends Component {
           {this.state.news &&
             this.state.news.map((news) => {
               return (
-                
-                  <div className="card w-75 my-2" style={{ width: "18rem" }}>
+                  <div className="card w-75 my-2" style={{ width: "18rem" }} key={news.title}>
                     <img
                       className="card-img-top"
                       src={news.urlToImage}
@@ -62,7 +56,6 @@ export class NewsDisplay extends Component {
                       </a>
                     </div>
                   </div>
-                
               );
             })}
         </div>

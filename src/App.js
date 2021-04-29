@@ -22,7 +22,7 @@ class App extends React.Component {
   componentDidMount = async () => {
     try {
       const response = await axios.get(
-        ` https://newsapi.org/v2/everything?q=(bar OR restaurante OR comida)+melhores+lugares+comer+${this.state.city}&apiKey=0b3cce36cefb47169db35892214ae9f7`
+        ` https://newsapi.org/v2/everything?q=(bar OR restaurante OR comida)+melhores+lugares+comer+${this.state.city}&apiKey=197d4650e19949b2890933226983e9ed`
       );
       console.log(response.data.articles);
       this.setState({ news: [...response.data.articles] });
@@ -50,7 +50,7 @@ class App extends React.Component {
       console.log(this.state.cities);
 
       const response3 = await axios.get(
-        ` https://newsapi.org/v2/everything?q=(bar OR restaurante)+${this.state.city}&apiKey=0b3cce36cefb47169db35892214ae9f7`
+        ` https://newsapi.org/v2/everything?q=(bar OR restaurante OR comida)+melhores+lugares+comer+${this.state.city}&apiKey=197d4650e19949b2890933226983e9ed`
       );
 
       this.setState({ news: [...response3.data.articles] });

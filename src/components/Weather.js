@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-
 import { Link } from "react-router-dom";
 import MapContainer from "./MapContainer";
 import DisplayWeather from "./DisplayWeather";
@@ -7,30 +6,7 @@ import Input from "./Input";
 import News from "./News";
 import sunImage from "../sun-sunglasses-5a.png";
 
-//import GooglePlaces from './GooglePlaces'
-
-
 export class Weather extends Component {
- 
-
-  // getLocation = () => {
-  //   if (navigator.geolocation) {
-  //     navigator.geolocation.getCurrentPosition(this.showPosition);
-  //   } else {
-  //     return "Geolocation is not supported by this browser.";
-  //   }
-  // };
-
-  // showPosition = (position) => {
-  //   let lat = position.coords.latitude;
-  //   let lon = position.coords.longitude;
-  //   this.setState({ coord: { lat: lat, lng: lon } });
-  // };
-
-
-
-
-
   render() {
     return (
       <div
@@ -54,7 +30,6 @@ export class Weather extends Component {
                 this.props.state.cities.map((city) => {
                   return (
                     <div key={city.id} className="row">
-                     
                       <div className="col-5 p-2">
                         <DisplayWeather
                           id={city.id}
@@ -103,3 +78,8 @@ export default Weather;
 
 // key 1 AIzaSyC4LfW4MmJgThlKn3thdzCqzh3VnphitIs
 // key 2 AIzaSyBCyuVoz1hvTxlfTFHincrJ_h1hRSooks4
+
+// key google new key glo 197d4650e19949b2890933226983e9ed
+
+
+// google news key 0b3cce36cefb47169db35892214ae9f7
