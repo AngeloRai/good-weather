@@ -3,9 +3,9 @@ import React, { Component } from "react";
 export class DisplayWeather extends Component {
   render() {
     return (
-      <div className="col-4 m-2" key={this.props.id}>
+      <div key={this.props.id}>
         <div
-          className="card p-4"
+          className="card p-3"
           style={{ background: "#CEF7DC" }}
         >
           <div className="">
