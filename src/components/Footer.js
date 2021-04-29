@@ -61,7 +61,7 @@ function Footer() {
               &nbsp;
             </a>
             <a
-              href="https://github.com/AngeloRai"
+              href="https://github.com"
               target="_blank"
               rel="noreferrer"
             >
