@@ -9,17 +9,19 @@ export class NewsDisplay extends Component {
 };
 
   componentDidMount = async () => {
-    
+    try{
       const response = await axios.get(
         ` https://newsapi.org/v2/everything?q=(bar OR restaurante OR comida)+melhores+lugares+comer+${this.props.state.city}&apiKey=197d4650e19949b2890933226983e9ed`
       );
       console.log(response.data.articles);
       this.setState({ news: [...response.data.articles] });
-   
+   }catch (err) {
+     console.log(err);
+   }
   };
 
   componentDidUpdate = async (prevProps, prevStates) => {
-    if(prevStates.news === this.state.news){
+    if(prevProps.state.cities !== this.props.state.cities){
       const response = await axios.get(
         ` https://newsapi.org/v2/everything?q=(bar OR restaurante OR comida)+melhores+lugares+comer+${this.props.state.city}&apiKey=197d4650e19949b2890933226983e9ed`
       );

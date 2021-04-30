@@ -15,7 +15,7 @@ class App extends React.Component {
     country: "brazil",
     coord: { lat: "", lng: "" },
     cities: "",
-    city: "",
+    city: "sao paulo",
     news: "",
   };
 
@@ -24,7 +24,7 @@ class App extends React.Component {
       const response = await axios.get(
         ` https://newsapi.org/v2/everything?q=(bar OR restaurante OR comida)+melhores+lugares+comer+${this.state.city}&apiKey=197d4650e19949b2890933226983e9ed`
       );
-      console.log(response.data.articles);
+      console.log(response.data);
       this.setState({ news: [...response.data.articles] });
     } catch (err) {
       console.log(err);
@@ -52,6 +52,7 @@ class App extends React.Component {
       const response3 = await axios.get(
         ` https://newsapi.org/v2/everything?q=(bar OR restaurante OR comida)+melhores+lugares+comer+${this.state.city}&apiKey=197d4650e19949b2890933226983e9ed`
       );
+      console.log(response3.data);
 
       this.setState({ news: [...response3.data.articles] });
     }

@@ -14,8 +14,8 @@ export class Weather extends Component {
         style={{ opcaity: ".3" }}
       >
         <Link to={`/weather`} style={{ textDecoration: "none" }}>
-          <div className="fixed-top w-50 my-5">
-            <img className="w-25" src={sunImage} alt="" />
+          <div className="fixed-top w-25 my-5">
+            <img className="w-75" src={sunImage} alt="" />
           </div>
         </Link>
         <Input
