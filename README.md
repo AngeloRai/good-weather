@@ -1,6 +1,10 @@
 # Link to App: 
 https://hungry-knuth-67c5f9.netlify.app/
 
+
+### Slides
+link: https://docs.google.com/presentation/d/16-QtXXGhLMKAWnI6TSSGgTHvWz1r7nlCIZLLDhDsYYw/edit#slide=id.gcb9a0b074_1_0
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -72,5 +76,3 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 
-### Slides
-link: https://docs.google.com/presentation/d/16-QtXXGhLMKAWnI6TSSGgTHvWz1r7nlCIZLLDhDsYYw/edit#slide=id.gcb9a0b074_1_0
