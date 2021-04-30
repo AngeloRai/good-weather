@@ -51,17 +51,17 @@ function Footer() {
           </div>
           <div className='d-flex'>
             <h6>SAMUEL FONSECA </h6>
-            <a href="https://www.instagram.com" target="_blank" rel="noreferrer">
+            <a href="https://www.instagram.com/sam_fonsecatr/" target="_blank" rel="noreferrer">
               &nbsp;
               <FaInstagram className="h3 mx-1 my-0 text-dark" />
               &nbsp;
             </a>
-            <a href="https://www.facebook.com" target="_blank" rel="noreferrer">
+            <a href="https://www.facebook.com/samfonsecatr/" target="_blank" rel="noreferrer">
               <FaFacebookSquare className="h3 mx-1" />
               &nbsp;
             </a>
             <a
-              href="https://github.com"
+              href="https://github.com/samuelbatista3rios?tab=repositories"
               target="_blank"
               rel="noreferrer"
             >
